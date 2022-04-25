@@ -2,16 +2,16 @@ var btnTranslate = document.querySelector("#translate-btn")
 var txtInput = document.querySelector("#text-input")
 var outputArea = document.querySelector("#output-area")
 
-
+var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
 function translatonURL(userInput) {
-    var tranURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json" + "?text=" + userInput
+    var tranURL = serverURL + "?text=" + userInput
     return tranURL
 }
 
 function errorHandler(error) {
-    alert("There is some problem with the server, please try again.")
     console.log("server error", error)
+    alert("There is some problem with the server, please try again.")
 }
 
 
@@ -20,7 +20,8 @@ function clickHandler(){
     
    fetch(translatonURL(inputText))
    .then(response => response.json())
-   .then(JSON => console.log(JSON.contents.translated))
+   .then(JSON => {var outputText = JSON.contents.translated
+                  outputArea.innerText = outputText})
    .catch(errorHandler)
 }
 btnTranslate.addEventListener("click", clickHandler)
