@@ -4,33 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="components/style.css" type="text/css">
     <title>Banana Translator</title>
-    <style>
-        #text-input {
-            width: 90%;
-            display: block;
-            margin: 1rem;
-            height: 10vh;
-            padding: 1rem;
-        }
 
-        #output-area{
-            width: 90%;
-            display:block;
-            margin: 1rem;
-            height: 20vh;
-            padding: 1rem;
-            border: 1px solid black;
-        }
-    </style>
 </head>
 <body>
-    <h1>Bananaaaaaaaaaaaaa</h1>
-    <textarea id="text-input" placeholder="Enter the text to be translated"></textarea>
-    <button id="translate-btn">Translate!</button>
-    <div><H2>translated text</H2></div>
-
-    <div id="output-area"></div>
+    <h1 class="main-heading">Bananaaaaaaaaaaaaa</h1>
+    <textarea class="input-area" id="text-input" placeholder="Enter the text to be translated"></textarea>
+    <button class="btn-translate" id="translate-btn">Translate!</button>
+    <div id="output-area" class="output-area">
+        <p class="output-placeholder">Translation here</p>
+    </div>
 
 
 

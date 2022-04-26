@@ -15,13 +15,15 @@ function errorHandler(error) {
 }
 
 
-function clickHandler(){
+function clickHandler() {
     var inputText = txtInput.value
-    
-   fetch(translatonURL(inputText))
-   .then(response => response.json())
-   .then(JSON => {var outputText = JSON.contents.translated
-                  outputArea.innerText = outputText})
-   .catch(errorHandler)
+
+    fetch(translatonURL(inputText))
+        .then(response => response.json())
+        .then(JSON => {
+            var outputText = JSON.contents.translated
+            outputArea.innerText = outputText
+        })
+        .catch(errorHandler)
 }
 btnTranslate.addEventListener("click", clickHandler)
